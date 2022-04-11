@@ -22,13 +22,7 @@ public class EvenOrOdd
 		else 
 		{
 			System.out.print("The integer " +int1+" is even");
-		}
-		
-		
-		
-		
-		
-		
+		}	
 		
 	}
 
