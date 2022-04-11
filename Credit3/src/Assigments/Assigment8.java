@@ -14,7 +14,7 @@ public class Assigment8 {
 		char num2 = num0.charAt(1);
 		char num3 = num0.charAt(2);
 			
-		System.out.println("The tens-place digit is"+num1);
+		System.out.println("The hundreds-place digit is"+num1);
 		System.out.println("The tens-place digit is"+num2);
 		System.out.println("The ones-place digit is:"+num3);
 		
