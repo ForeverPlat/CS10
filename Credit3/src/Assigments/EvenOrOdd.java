@@ -20,7 +20,7 @@ public class EvenOrOdd
 			System.out.println("The integer " +int1+" is odd");
 		}
 		else 
-		{
+		{	
 			System.out.print("The integer " +int1+" is even");
 		}	
 		
