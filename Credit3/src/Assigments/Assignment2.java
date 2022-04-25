@@ -3,7 +3,7 @@ package Assigments;
 public class 
 Assignment2 
 	{
-	/*Author: Luqman Ajani       Date: 3/31/2022
+	/*Author: Luqman Ajani       Date: 4/21/2022
 	 
 	 Course: Computer Science 10*/
 
@@ -30,25 +30,25 @@ Assignment2
 		System.out.println("------	------");
 
 				
-		/* Screen Dump
-		|             | 
-		|            |  |
-		|           |    |
-		|          |_ _ _ _|
-		|__ __ __ |         |
-		
-		
-				
-		------ 	-----
-		| 	   	|
-		|      	|
-		| 	   	|	
-		|      	-----
-		|		   	|
-		|		   	|
-		|	   	   	|
-		------	------
-		 */
 	}
 
 }
+/* Screen Dump
+|             | 
+|            |  |
+|           |    |
+|          |_ _ _ _|
+|__ __ __ |         |
+
+
+		
+------ 	-----
+| 	   	|
+|      	|
+| 	   	|	
+|      	-----
+|		   	|
+|		   	|
+|	   	   	|
+------	------
+ */
