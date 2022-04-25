@@ -1,7 +1,15 @@
-package Assigments;
+package Assignments;
 
 import java.util.Scanner;
+/*
+Program: Assignment12.java          Date: 4/21/2022
 
+
+Author: Luqman Ajani
+School: CHHS
+Course: Computer Science 10
+	 
+*/
 public class Assigments12 
 {
 
@@ -52,18 +60,8 @@ public class Assigments12
 	}
 
 }
-/*
- 90 – 100 A+
-80 – 89 A
-75 – 79 B+
-70 – 74 B
-65 – 69 C+
-60 – 64 C
-55 – 59 D+
-50 – 54 D
-Below 50 F
-
-Enter a grade percentage: 75
-The corresponding letter grade is: B+ 
- */
- 
+/*Screen Dump
+Enter a grade percentage: 
+90
+The corresponding letter grade is: A+
+*/

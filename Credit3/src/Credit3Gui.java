@@ -8,13 +8,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Credit3Gui {
 
 	private JFrame frame;
 	private JTextField fn;
 	private JTextField lnn;
-	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -71,40 +72,62 @@ public class Credit3Gui {
 		lnn.setBounds(72, 58, 121, 20);
 		panel.add(lnn);
 		
-		JLabel Ag = new JLabel("Age");
+		JLabel Ag = new JLabel("grade");
 		Ag.setBounds(10, 93, 67, 28);
 		panel.add(Ag);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(72, 97, 121, 20);
-		panel.add(textField_2);
-		
 		JLabel dis = new JLabel("");
-		dis.setBounds(10, 215, 378, 106);
+		dis.setBounds(76, 216, 378, 106);
 		panel.add(dis);
+		
+		JComboBox g2 = new JComboBox();
+		g2.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12"}));
+		g2.setBounds(72, 99, 121, 22);
+		panel.add(g2);
+		
 		
 		JButton Sb = new JButton("Submit");
 		Sb.addActionListener(new ActionListener() 
 		{
+			
 			public void actionPerformed(ActionEvent e) 
 			{
 				String FN = fn.getText();
 				String LN = lnn.getText();
+				int grade;
+				
+				if (g2.getSelectedItem().equals("10")) 
+				{
+					grade = 10;
+				}
+				else if (g2.getSelectedItem().equals("11")) 
+				{
+					grade = 11;
+				}
+				else 
+				{
+					grade = 12;
+				}
 		
-				dis.setText("First Name: " + FN+ " Last name: " +LN);
+				dis.setText("First Name: " + FN+ " Last name: " +LN +" Age: ");
 			}
 		});
 		Sb.setBounds(220, 18, 168, 64);
 		panel.add(Sb);
 		
 		JButton Rs = new JButton("Reset");
-		Rs.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		Rs.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				fn.setText(" ");
+				lnn.setText(" ");
+				
 			}
 		});
 		Rs.setBounds(220, 96, 168, 64);
 		panel.add(Rs);
+		
 		
 		
 	}

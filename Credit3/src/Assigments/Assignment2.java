@@ -18,7 +18,7 @@ Assignment2
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-		
+		//End of spaces
 		System.out.println("------ 	-----");
 		System.out.println("|       |");
 		System.out.println("|      	|");

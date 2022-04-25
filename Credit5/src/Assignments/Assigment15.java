@@ -1,7 +1,15 @@
-package Assigments;
+package Assignments;
 
 import java.util.Scanner;
+/*
+Program: Assignment15.java          Date: 4/21/2022
 
+
+Author: Luqman Ajani
+School: CHHS
+Course: Computer Science 10
+	 
+*/
 public class Assigment15 {
 
 	public static void main(String[] args) {
@@ -62,3 +70,7 @@ public class Assigment15 {
 	}
 
 }
+/*Screen Dump
+What is 6+4 = 10
+You got it right! Congratulations!!
+*/

@@ -1,7 +1,7 @@
 package Assigments;
 /*
 
-Program: Assignment3.java          4/6/20220
+Program: Assignment3.java          4/21/2022
 
 
 Author: Luqman Ajani
@@ -18,25 +18,26 @@ public class Assignment3
 		{
 			// pick four random integers, each 1-16			
 			
+			//print BINGO horizontally
 			System.out.print("B");
 			System.out.print("   I");
 			System.out.print("     N");
 			System.out.print("      G");
 			System.out.println("      O");
 			
-			int a = (int)( 16*Math.random() );
+			int a = (int)( 16*Math.random() );//Displays number 1 through 15
 			System.out.print(a+"  ");
 			
-			int a2 = (int)( 16*Math.random()+14);
+			int a2 = (int)( 16*Math.random()+14);//Displays number 16 through 30
 			System.out.print(a2+"  ");
 			
-			int a3 = (int)( 16*Math.random()+30);
+			int a3 = (int)( 16*Math.random()+30);//Displays number 31 through 45 
 			System.out.print("  "+a3+"  ");
 			
-			int a4 = (int)( 16*Math.random()+45);
+			int a4 = (int)( 16*Math.random()+45);//Displays number 46 through 60
 			System.out.print("   "+a4+"  ");
 			
-			int a5 = (int)( 16*Math.random()+60);
+			int a5 = (int)( 16*Math.random()+60);//Displays number 61 through 75
 			System.out.println("   "+a5);
 			
 			int b = (int)( 16*Math.random() );
