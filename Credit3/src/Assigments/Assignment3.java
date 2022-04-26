@@ -62,7 +62,7 @@ public class Assignment3
 			System.out.print(c2+"  ");
 			
 			int c3 = (int)( 16*Math.random()+30);
-			System.out.print("  "+c3+"  ");
+			System.out.print("  "+""+"  ");
 			
 			int c4 = (int)( 16*Math.random()+45);
 			System.out.print(("   "+c4+"  "));

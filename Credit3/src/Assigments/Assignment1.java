@@ -12,7 +12,7 @@ public class Assignment1
 	{
 	public static void main(String[] args) 
 	{
-		System.out.println("From: Mr. Wilson");
+		System.out.println("From: Mr. Wilson");//prints this
 		System.out.println("Address: Acer Computer, Lab 314");
 		System.out.println("Date: November 2, 2020\n\n\n");
 		//Spaces

@@ -15,42 +15,40 @@ public class Assignment6
 	public static void main(String[] args) 
 	{
 		 Scanner input = new Scanner(System.in);//calls in Scanner
-		 
-		 String fName;		  
+		 		  
 		 System.out.println("What is your first name? ");
-		 fName = input.nextLine();//allows user to put in input   
+		 String fName = input.nextLine();//allows user to put in input   
 		       
-		 String lName;		  
+		 		  
 		 System.out.println("What is your last name? ");
-		 lName = input.nextLine();//allows user to put in input 
-		 
-		 String grade;		  
+		 String lName = input.nextLine();//allows user to put in input 
+		 		  
 		 System.out.println("What grade are you in? ");
-		 grade = input.nextLine();//allows user to put in input
-		    
-		 String school;		  
+		 int grade = input.nextInt();//allows user to put in input
+		 input.nextLine();   	  
+		 
 		 System.out.println("What school do you attend? ");
-		 school = input.nextLine();//allows user to put in input  
-		 
-		 String hobby;		  
+		 String school = input.nextLine();//allows user to put in input  
+		 		  
 		 System.out.println("What is your favourite hobby? ");
-		 hobby = input.nextLine();//allows user to put in input
+		 String hobby = input.nextLine();//allows user to put in input
 		 
-		 System.out.println("Hello, your name is "+fName+lName+", you are in Grade "+grade+" at "+school+". Your favourite hobby is "+hobby);//Outputs the answers from the input taken from the user
+		 System.out.println("Hello, your name is "+fName+" "+lName+", you are in Grade "+grade+" at "+school+". Your favourite hobby is "+hobby);//Outputs the answers from the input taken from the user
 	}
 
 }
 /*Screen Dump
 
-
 What is your first name? 
+L
 What is your last name? 
-What grade are you in?
+Aja
+What grade are you in? 
+99
 What school do you attend? 
+ok school
 What is your favourite hobby? 
-
-
-"Hello, your name is Cosmo Kramer, you are
-currently in grade 10 at Crescent Heights HS. Your
-favourite hobby is swimming."		      		    		      
+D:
+Hello, your name is L Aja, you are in Grade 99 at ok school. Your favourite hobby is D:
+		      		    		      
 */

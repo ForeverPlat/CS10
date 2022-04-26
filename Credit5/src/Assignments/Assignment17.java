@@ -10,40 +10,42 @@ School: CHHS
 Course: Computer Science 10
 	 
 */
-public class Assignment17 {
+public class Assignment17 
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
-		Scanner input = new Scanner (System.in);
+		Scanner input = new Scanner (System.in);//calls scanner
 
 		System.out.println("What is your GPA (Type -1 if you want to quit.): ");
 		double gpa = input.nextDouble();
 		 
 		if (gpa == -1) 
 		{
-			System.exit(0);
+			System.exit(0);//ends the code
 	
 			System.out.println("Thank you for using ourprogram, have a great day!");
 		}
 		while (gpa != -1) 
 		{
-			if (gpa >= 3.65 && 3.8 >= gpa)
+			if (gpa >= 3.65 && 3.8 >= gpa)//set a range
 			{
 				System.out.println("magna cum laude");			
 			}
-			else if (gpa >= 3.8)
+			else if (gpa >= 3.8)//set a range
 			{
 				System.out.println("summa cum laude");
 			}
-			else if (gpa < 3.65)
+			else if (gpa < 3.65)//set a range
 			{
 				System.out.println("Sorry, at this you did not qualify for an honors distinction.”");
 			}
 			System.out.println("What is your GPA (Type -1 if you want to quit.): ");
 			gpa = input.nextDouble();
-			if (gpa == -1) 
+			if (gpa == -1)//if u type -1
 			{
-				System.out.println("Thank you for using our program, have a great day!");	
+				System.out.println("Thank you for using our program, have a great day!");//print this 
 			}
 			
 		}
