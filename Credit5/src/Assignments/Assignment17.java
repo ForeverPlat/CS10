@@ -19,6 +19,7 @@ public class Assignment17
 		Scanner input = new Scanner (System.in);//calls scanner
 
 		System.out.println("What is your GPA (Type -1 if you want to quit.): ");
+		
 		double gpa = input.nextDouble();
 		 
 		if (gpa == -1) 
