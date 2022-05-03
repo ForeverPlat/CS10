@@ -12,12 +12,7 @@ public class ExerciseJavaMath
 		int a = 16;
 		Math.sqrt(a);
 	
-		Math.random();
-		
-		boolean isJavaFun = true;
-		boolean isFishTasty = false;
-		System.out.println(isJavaFun);
-		System.out.println(isFishTasty);
+		Math.random();			
 	}
 
 }
