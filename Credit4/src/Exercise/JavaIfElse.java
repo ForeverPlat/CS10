@@ -20,7 +20,6 @@ public class JavaIfElse
 		  System.out.println("Hello World");
 		}
 		
-		
 		int c = 50;
 		int d = 50;
 		if

@@ -1,6 +1,3 @@
-package Assignments;
-
-import java.util.Scanner;
 /*
 Program: Assignment6.java          Date: 4/21/2022
 
@@ -10,6 +7,11 @@ School: CHHS
 Course: Computer Science 10
 	 
 */
+
+package Assignments;
+
+import java.util.Scanner;
+
 public class Assignment6 
 {
 	public static void main(String[] args) 
