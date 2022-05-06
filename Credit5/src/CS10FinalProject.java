@@ -69,74 +69,78 @@ public class CS10FinalProject
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton bag = new JButton("Bag");
-		bag.setBounds(39, 459, 125, 125);
-		frame.getContentPane().add(bag);
+		JButton hp = new JButton("HP");
+		hp.setBounds(39, 459, 125, 125);
+		frame.getContentPane().add(hp);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(39, 65, 401, 250);
+		panel_3.setBounds(33, 64, 420, 300);
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0), 5));
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 		
-		JPanel hp = new JPanel();
-		hp.setBounds(70, 67, 100, 10);
-		panel_3.add(hp);
-		hp.setLayout(null);
+		JPanel hpbar = new JPanel();
+		hpbar.setBounds(40, 83, 100, 10);
+		panel_3.add(hpbar);
+		hpbar.setLayout(null);
 		
 		JPanel hp2 = new JPanel();
 		hp2.setBounds(10, 0, 10, 10);
 		hp2.setBackground(SystemColor.menu);
-		hp.add(hp2);
+		hpbar.add(hp2);
 		
 		JPanel hp3 = new JPanel();
 		hp3.setBackground(SystemColor.menu);
 		hp3.setBounds(20, 0, 10, 10);
-		hp.add(hp3);
+		hpbar.add(hp3);
 		
 		JPanel hp4 = new JPanel();
 		hp4.setBackground(SystemColor.menu);
 		hp4.setBounds(30, 0, 10, 10);
-		hp.add(hp4);
+		hpbar.add(hp4);
 		
 		JPanel hp5 = new JPanel();
 		hp5.setBackground(SystemColor.menu);
 		hp5.setBounds(40, 0, 10, 10);
-		hp.add(hp5);
+		hpbar.add(hp5);
 		
 		JPanel hp6 = new JPanel();
 		hp6.setBackground(SystemColor.menu);
 		hp6.setBounds(50, 0, 10, 10);
-		hp.add(hp6);
+		hpbar.add(hp6);
 		
 		JPanel hp7 = new JPanel();
 		hp7.setBackground(SystemColor.menu);
 		hp7.setBounds(60, 0, 10, 10);
-		hp.add(hp7);
+		hpbar.add(hp7);
 		
 		JPanel hp8 = new JPanel();
 		hp8.setBackground(SystemColor.menu);
 		hp8.setBounds(70, 0, 10, 10);
-		hp.add(hp8);
+		hpbar.add(hp8);
 		
 		JPanel hp9 = new JPanel();
 		hp9.setBackground(SystemColor.menu);
 		hp9.setBounds(80, 0, 10, 10);
-		hp.add(hp9);
+		hpbar.add(hp9);
 		
 		JPanel hp10 = new JPanel();
 		hp10.setBackground(SystemColor.menu);
 		hp10.setBounds(90, 0, 10, 10);
-		hp.add(hp10);
+		hpbar.add(hp10);
 		
 		JPanel hp1 = new JPanel();
 		hp1.setBackground(SystemColor.menu);
 		hp1.setBounds(0, 0, 10, 10);
-		hp.add(hp1);
+		hpbar.add(hp1);
 		
 		JLabel bg = new JLabel("");
-		bg.setBounds(5, 5, 391, 240);
+		bg.setBounds(5, 5, 410, 290);
 		panel_3.add(bg);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(57, 129, 100, 130);
+		panel_3.add(lblNewLabel);
 		
 		JButton fght = new JButton("Fight");
 		fght.setBounds(174, 389, 125, 125);
