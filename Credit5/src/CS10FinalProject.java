@@ -28,7 +28,9 @@ public class CS10FinalProject
 	private JFrame frame;
 	
 	ImageIcon bg1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\bg1.png");
-
+	ImageIcon nmy1 = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Enemy.png");
+	ImageIcon Char1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\Char.png");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -80,7 +82,7 @@ public class CS10FinalProject
 		panel_3.setLayout(null);
 		
 		JPanel hpbar = new JPanel();
-		hpbar.setBounds(40, 83, 100, 10);
+		hpbar.setBounds(280, 211, 100, 10);
 		panel_3.add(hpbar);
 		hpbar.setLayout(null);
 		
@@ -134,13 +136,72 @@ public class CS10FinalProject
 		hp1.setBounds(0, 0, 10, 10);
 		hpbar.add(hp1);
 		
+		JLabel Enemy = new JLabel("");
+		Enemy.setBounds(300, 15, 73, 169);
+		panel_3.add(Enemy);
+		
+		JPanel hpbar_1 = new JPanel();
+		hpbar_1.setBounds(51, 37, 100, 10);
+		panel_3.add(hpbar_1);
+		hpbar_1.setLayout(null);
+		
+		JPanel hp2_1 = new JPanel();
+		hp2_1.setBackground(SystemColor.menu);
+		hp2_1.setBounds(10, 0, 10, 10);
+		hpbar_1.add(hp2_1);
+		
+		JPanel hp3_1 = new JPanel();
+		hp3_1.setBackground(SystemColor.menu);
+		hp3_1.setBounds(20, 0, 10, 10);
+		hpbar_1.add(hp3_1);
+		
+		JPanel hp4_1 = new JPanel();
+		hp4_1.setBackground(SystemColor.menu);
+		hp4_1.setBounds(30, 0, 10, 10);
+		hpbar_1.add(hp4_1);
+		
+		JPanel hp5_1 = new JPanel();
+		hp5_1.setBackground(SystemColor.menu);
+		hp5_1.setBounds(40, 0, 10, 10);
+		hpbar_1.add(hp5_1);
+		
+		JPanel hp6_1 = new JPanel();
+		hp6_1.setBackground(SystemColor.menu);
+		hp6_1.setBounds(50, 0, 10, 10);
+		hpbar_1.add(hp6_1);
+		
+		JPanel hp7_1 = new JPanel();
+		hp7_1.setBackground(SystemColor.menu);
+		hp7_1.setBounds(60, 0, 10, 10);
+		hpbar_1.add(hp7_1);
+		
+		JPanel hp8_1 = new JPanel();
+		hp8_1.setBackground(SystemColor.menu);
+		hp8_1.setBounds(70, 0, 10, 10);
+		hpbar_1.add(hp8_1);
+		
+		JPanel hp9_1 = new JPanel();
+		hp9_1.setBackground(SystemColor.menu);
+		hp9_1.setBounds(80, 0, 10, 10);
+		hpbar_1.add(hp9_1);
+		
+		JPanel hp10_1 = new JPanel();
+		hp10_1.setBackground(SystemColor.menu);
+		hp10_1.setBounds(90, 0, 10, 10);
+		hpbar_1.add(hp10_1);
+		
+		JPanel hp1_1 = new JPanel();
+		hp1_1.setBackground(SystemColor.menu);
+		hp1_1.setBounds(0, 0, 10, 10);
+		hpbar_1.add(hp1_1);
+		
+		JLabel Char = new JLabel("");
+		Char.setBounds(10, 28, 211, 225);
+		panel_3.add(Char);
+		
 		JLabel bg = new JLabel("");
 		bg.setBounds(5, 5, 410, 290);
 		panel_3.add(bg);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(57, 129, 100, 130);
-		panel_3.add(lblNewLabel);
 		
 		JButton fght = new JButton("Fight");
 		fght.setBounds(174, 389, 125, 125);
@@ -149,6 +210,7 @@ public class CS10FinalProject
 			public void actionPerformed(ActionEvent e) 
 			{
 				bg.setIcon(bg1);
+				//enemys' hp
 				hp1.setBackground(Color.green);
 				hp2.setBackground(Color.green);
 				hp3.setBackground(Color.green);
@@ -159,6 +221,19 @@ public class CS10FinalProject
 				hp8.setBackground(Color.green);
 				hp9.setBackground(Color.green);
 				hp10.setBackground(Color.green);
+				//Your character hp
+				hp1_1.setBackground(Color.green);
+				hp2_1.setBackground(Color.green);
+				hp3_1.setBackground(Color.green);
+				hp4_1.setBackground(Color.green);
+				hp5_1.setBackground(Color.green);
+				hp6_1.setBackground(Color.green);
+				hp7_1.setBackground(Color.green);
+				hp8_1.setBackground(Color.green);
+				hp9_1.setBackground(Color.green);
+				hp10_1.setBackground(Color.green);
+				Enemy.setIcon(nmy1);
+				Char.setIcon(Char1);
 			}
 		});
 		frame.getContentPane().add(fght);
