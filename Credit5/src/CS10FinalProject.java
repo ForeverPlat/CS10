@@ -30,6 +30,7 @@ public class CS10FinalProject
 	ImageIcon bg1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\bg1.png");
 	ImageIcon nmy1 = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Enemy.png");
 	ImageIcon Char1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\Char.png");
+	ImageIcon slash1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\SLASH.png");
 	
 	/**
 	 * Launch the application.
@@ -199,13 +200,17 @@ public class CS10FinalProject
 		Char.setBounds(10, 28, 211, 225);
 		panel_3.add(Char);
 		
+		JLabel effect = new JLabel("");
+		effect.setBounds(169, 54, 169, 101);
+		
+		panel_3.add(effect);
+		
 		JLabel bg = new JLabel("");
 		bg.setBounds(5, 5, 410, 290);
 		panel_3.add(bg);
 		
-		JButton fght = new JButton("Fight");
-		fght.setBounds(174, 389, 125, 125);
-		fght.addActionListener(new ActionListener() 
+		JButton Start = new JButton("Start");
+		Start.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -234,16 +239,63 @@ public class CS10FinalProject
 				hp10_1.setBackground(Color.green);
 				Enemy.setIcon(nmy1);
 				Char.setIcon(Char1);
+				Start.setVisible(false);
 			}
 		});
-		frame.getContentPane().add(fght);
+		Start.setBounds(364, 375, 89, 23);
+		frame.getContentPane().add(Start);
 		
 		JButton run = new JButton("Run");
+		run.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		run.setBounds(309, 459, 125, 125);
 		frame.getContentPane().add(run);
 		
 		JButton qt = new JButton("Quit");
 		qt.setBounds(174, 535, 125, 125);
 		frame.getContentPane().add(qt);
+		
+		JButton fght = new JButton("Fight");
+		fght.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				hp.setText("Ability1");
+				
+					hp.addActionListener(new ActionListener() 
+					{
+						public void actionPerformed(ActionEvent e) 
+						{
+							effect.setIcon(slash1);
+							
+						}
+					});
+				run.setText("Ability");
+				qt.setText("Return");
+				fght.setText("Ablity");
+						
+			}
+		});
+		fght.setBounds(174, 389, 125, 125);
+		frame.getContentPane().add(fght);
+		
+		qt.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				hp.setText("HP");
+				run.setText("Run");
+				qt.setText("Quit");
+				fght.setText("Fight");
+			}
+		});
+		
+		
+		
+		
+		
+		
 	}
 }
