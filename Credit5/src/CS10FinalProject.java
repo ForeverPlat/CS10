@@ -73,6 +73,10 @@ public class CS10FinalProject
 		frame.getContentPane().setLayout(null);
 		
 		JButton hp = new JButton("HP");
+		hp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		hp.setBounds(39, 459, 125, 125);
 		frame.getContentPane().add(hp);
 		
@@ -197,11 +201,11 @@ public class CS10FinalProject
 		hpbar_1.add(hp1_1);
 		
 		JLabel Char = new JLabel("");
-		Char.setBounds(10, 28, 211, 225);
+		Char.setBounds(5, 15, 211, 225);
 		panel_3.add(Char);
 		
 		JLabel effect = new JLabel("");
-		effect.setBounds(169, 54, 169, 101);
+		effect.setBounds(110, 37, 180, 222);
 		
 		panel_3.add(effect);
 		
@@ -268,8 +272,8 @@ public class CS10FinalProject
 					{
 						public void actionPerformed(ActionEvent e) 
 						{
-							effect.setIcon(slash1);
-							
+							effect.setIcon(slash1);	
+							effect.setVisible(false);
 						}
 					});
 				run.setText("Ability");
