@@ -272,9 +272,17 @@ public class CS10FinalProject
 					{
 						public void actionPerformed(ActionEvent e) 
 						{
-							effect.setIcon(slash1);	
-							effect.setVisible(false);
+								effect.setIcon(slash1);	
+								
+								hp.addActionListener(new ActionListener() 
+								{
+									public void actionPerformed(ActionEvent e) 
+									{
+										effect.setVisible(false);
+									}
+								});
 						}
+
 					});
 				run.setText("Ability");
 				qt.setText("Return");
@@ -282,6 +290,7 @@ public class CS10FinalProject
 						
 			}
 		});
+		
 		fght.setBounds(174, 389, 125, 125);
 		frame.getContentPane().add(fght);
 		
