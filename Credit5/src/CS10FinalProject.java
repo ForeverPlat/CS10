@@ -72,11 +72,11 @@ public class CS10FinalProject
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton Start = new JButton("Start");
+		Start.setBounds(364, 375, 89, 23);
+		frame.getContentPane().add(Start);
+		
 		JButton hp = new JButton("HP");
-		hp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		hp.setBounds(39, 459, 125, 125);
 		frame.getContentPane().add(hp);
 		
@@ -86,119 +86,9 @@ public class CS10FinalProject
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 		
-		JPanel hpbar = new JPanel();
-		hpbar.setBounds(280, 211, 100, 10);
-		panel_3.add(hpbar);
-		hpbar.setLayout(null);
-		
-		JPanel hp2 = new JPanel();
-		hp2.setBounds(10, 0, 10, 10);
-		hp2.setBackground(SystemColor.menu);
-		hpbar.add(hp2);
-		
-		JPanel hp3 = new JPanel();
-		hp3.setBackground(SystemColor.menu);
-		hp3.setBounds(20, 0, 10, 10);
-		hpbar.add(hp3);
-		
-		JPanel hp4 = new JPanel();
-		hp4.setBackground(SystemColor.menu);
-		hp4.setBounds(30, 0, 10, 10);
-		hpbar.add(hp4);
-		
-		JPanel hp5 = new JPanel();
-		hp5.setBackground(SystemColor.menu);
-		hp5.setBounds(40, 0, 10, 10);
-		hpbar.add(hp5);
-		
-		JPanel hp6 = new JPanel();
-		hp6.setBackground(SystemColor.menu);
-		hp6.setBounds(50, 0, 10, 10);
-		hpbar.add(hp6);
-		
-		JPanel hp7 = new JPanel();
-		hp7.setBackground(SystemColor.menu);
-		hp7.setBounds(60, 0, 10, 10);
-		hpbar.add(hp7);
-		
-		JPanel hp8 = new JPanel();
-		hp8.setBackground(SystemColor.menu);
-		hp8.setBounds(70, 0, 10, 10);
-		hpbar.add(hp8);
-		
-		JPanel hp9 = new JPanel();
-		hp9.setBackground(SystemColor.menu);
-		hp9.setBounds(80, 0, 10, 10);
-		hpbar.add(hp9);
-		
-		JPanel hp10 = new JPanel();
-		hp10.setBackground(SystemColor.menu);
-		hp10.setBounds(90, 0, 10, 10);
-		hpbar.add(hp10);
-		
-		JPanel hp1 = new JPanel();
-		hp1.setBackground(SystemColor.menu);
-		hp1.setBounds(0, 0, 10, 10);
-		hpbar.add(hp1);
-		
 		JLabel Enemy = new JLabel("");
 		Enemy.setBounds(300, 15, 73, 169);
 		panel_3.add(Enemy);
-		
-		JPanel hpbar_1 = new JPanel();
-		hpbar_1.setBounds(51, 37, 100, 10);
-		panel_3.add(hpbar_1);
-		hpbar_1.setLayout(null);
-		
-		JPanel hp2_1 = new JPanel();
-		hp2_1.setBackground(SystemColor.menu);
-		hp2_1.setBounds(10, 0, 10, 10);
-		hpbar_1.add(hp2_1);
-		
-		JPanel hp3_1 = new JPanel();
-		hp3_1.setBackground(SystemColor.menu);
-		hp3_1.setBounds(20, 0, 10, 10);
-		hpbar_1.add(hp3_1);
-		
-		JPanel hp4_1 = new JPanel();
-		hp4_1.setBackground(SystemColor.menu);
-		hp4_1.setBounds(30, 0, 10, 10);
-		hpbar_1.add(hp4_1);
-		
-		JPanel hp5_1 = new JPanel();
-		hp5_1.setBackground(SystemColor.menu);
-		hp5_1.setBounds(40, 0, 10, 10);
-		hpbar_1.add(hp5_1);
-		
-		JPanel hp6_1 = new JPanel();
-		hp6_1.setBackground(SystemColor.menu);
-		hp6_1.setBounds(50, 0, 10, 10);
-		hpbar_1.add(hp6_1);
-		
-		JPanel hp7_1 = new JPanel();
-		hp7_1.setBackground(SystemColor.menu);
-		hp7_1.setBounds(60, 0, 10, 10);
-		hpbar_1.add(hp7_1);
-		
-		JPanel hp8_1 = new JPanel();
-		hp8_1.setBackground(SystemColor.menu);
-		hp8_1.setBounds(70, 0, 10, 10);
-		hpbar_1.add(hp8_1);
-		
-		JPanel hp9_1 = new JPanel();
-		hp9_1.setBackground(SystemColor.menu);
-		hp9_1.setBounds(80, 0, 10, 10);
-		hpbar_1.add(hp9_1);
-		
-		JPanel hp10_1 = new JPanel();
-		hp10_1.setBackground(SystemColor.menu);
-		hp10_1.setBounds(90, 0, 10, 10);
-		hpbar_1.add(hp10_1);
-		
-		JPanel hp1_1 = new JPanel();
-		hp1_1.setBackground(SystemColor.menu);
-		hp1_1.setBounds(0, 0, 10, 10);
-		hpbar_1.add(hp1_1);
 		
 		JLabel Char = new JLabel("");
 		Char.setBounds(5, 15, 211, 225);
@@ -213,102 +103,114 @@ public class CS10FinalProject
 		bg.setBounds(5, 5, 410, 290);
 		panel_3.add(bg);
 		
-		JButton Start = new JButton("Start");
+		JButton run = new JButton("Run");
+		run.setBounds(309, 459, 125, 125);
+		frame.getContentPane().add(run);
+		
+		JButton yes = new JButton("Yes");
+		yes.setBounds(39, 459, 125, 125);
+		frame.getContentPane().add(yes);
+		
+		JButton no = new JButton("No");
+		no.setBounds(309, 459, 125, 125);
+		frame.getContentPane().add(no);
+		
+		JButton ab1 = new JButton("Slash");
+		ab1.setBounds(39, 459, 125, 125);
+		frame.getContentPane().add(ab1);
+		
+		JButton ab2 = new JButton("Shield");
+		ab2.setBounds(174, 389, 125, 125);
+		frame.getContentPane().add(ab2);
+		
+		JButton ab3 = new JButton("DeBuff");
+		ab3.setBounds(309, 459, 125, 125);
+		frame.getContentPane().add(ab3);	
+
+		JButton qt = new JButton("Quit");
+		qt.setBounds(174, 535, 125, 125);
+		frame.getContentPane().add(qt);	
+		
+		JButton fght = new JButton("Fight");
+		fght.setBounds(174, 389, 125, 125);
+		frame.getContentPane().add(fght);
+		
+		hp.setVisible(false);
+		run.setVisible(false);
+		qt.setVisible(false);
+		fght.setVisible(false);
+		ab1.setVisible(false);
+		ab2.setVisible(false);
+		ab3.setVisible(false);
+		yes.setVisible(false);
+		no.setVisible(false);
+		
+		
 		Start.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				bg.setIcon(bg1);
-				//enemys' hp
-				hp1.setBackground(Color.green);
-				hp2.setBackground(Color.green);
-				hp3.setBackground(Color.green);
-				hp4.setBackground(Color.green);
-				hp5.setBackground(Color.green);
-				hp6.setBackground(Color.green);
-				hp7.setBackground(Color.green);
-				hp8.setBackground(Color.green);
-				hp9.setBackground(Color.green);
-				hp10.setBackground(Color.green);
-				//Your character hp
-				hp1_1.setBackground(Color.green);
-				hp2_1.setBackground(Color.green);
-				hp3_1.setBackground(Color.green);
-				hp4_1.setBackground(Color.green);
-				hp5_1.setBackground(Color.green);
-				hp6_1.setBackground(Color.green);
-				hp7_1.setBackground(Color.green);
-				hp8_1.setBackground(Color.green);
-				hp9_1.setBackground(Color.green);
-				hp10_1.setBackground(Color.green);
 				Enemy.setIcon(nmy1);
 				Char.setIcon(Char1);
+				hp.setVisible(true);
+				run.setVisible(true);
+				qt.setVisible(true);
+				fght.setVisible(true);
 				Start.setVisible(false);
 			}
-		});
-		Start.setBounds(364, 375, 89, 23);
-		frame.getContentPane().add(Start);
+		});	
 		
-		JButton run = new JButton("Run");
-		run.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		run.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				
 			}
 		});
-		run.setBounds(309, 459, 125, 125);
-		frame.getContentPane().add(run);
-		
-		JButton qt = new JButton("Quit");
-		qt.setBounds(174, 535, 125, 125);
-		frame.getContentPane().add(qt);
-		
-		JButton fght = new JButton("Fight");
+	
 		fght.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				hp.setText("Ability1");
-				
-					hp.addActionListener(new ActionListener() 
-					{
-						public void actionPerformed(ActionEvent e) 
-						{
-								effect.setIcon(slash1);	
-								
-								hp.addActionListener(new ActionListener() 
-								{
-									public void actionPerformed(ActionEvent e) 
-									{
-										effect.setVisible(false);
-									}
-								});
-						}
-
-					});
-				run.setText("Ability");
-				qt.setText("Return");
-				fght.setText("Ablity");
-						
+				hp.setVisible(false);
+				yes.setVisible(false);
+				no.setVisible(false);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				ab1.setVisible(true);
+				ab2.setVisible(true);
+				ab3.setVisible(true);
 			}
 		});
 		
-		fght.setBounds(174, 389, 125, 125);
-		frame.getContentPane().add(fght);
+		ab1.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{	
+				effect.setIcon(slash1);	
+			}
+		});
+		
+		hp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		
 		qt.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				hp.setText("HP");
-				run.setText("Run");
-				qt.setText("Quit");
-				fght.setText("Fight");
+				qt.setVisible(false);
+				hp.setVisible(false);
+				yes.setVisible(true);
+				no.setVisible(true);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				ab1.setVisible(false);
+				ab2.setVisible(false);
+				ab3.setVisible(false);
 			}
 		});
-		
-		
-		
-		
-		
-		
 	}
 }
