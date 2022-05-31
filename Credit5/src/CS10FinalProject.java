@@ -31,6 +31,7 @@ public class CS10FinalProject
 	ImageIcon nmy1 = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Enemy.png");
 	ImageIcon Char1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\Char.png");
 	ImageIcon slash1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\SLASH.png");
+	ImageIcon quit1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\quit1.png");
 	
 	/**
 	 * Launch the application.
@@ -75,6 +76,10 @@ public class CS10FinalProject
 		JButton Start = new JButton("Start");
 		Start.setBounds(364, 375, 89, 23);
 		frame.getContentPane().add(Start);
+
+		JButton fght = new JButton("Fight");
+		fght.setBounds(174, 389, 125, 125);
+		frame.getContentPane().add(fght);
 		
 		JButton hp = new JButton("HP");
 		hp.setBounds(39, 459, 125, 125);
@@ -96,8 +101,19 @@ public class CS10FinalProject
 		
 		JLabel effect = new JLabel("");
 		effect.setBounds(110, 37, 180, 222);
-		
 		panel_3.add(effect);
+
+		JProgressBar hpbar = new JProgressBar();
+		hpbar.setBackground(new Color(255, 0, 0));
+		hpbar.setForeground(Color.GREEN);
+		hpbar.setBounds(20, 37, 146, 14);
+		panel_3.add(hpbar);
+		
+		JProgressBar hpbar1 = new JProgressBar();
+		hpbar1.setForeground(Color.GREEN);
+		hpbar1.setBackground(Color.RED);
+		hpbar1.setBounds(252, 201, 146, 14);
+		panel_3.add(hpbar1);
 		
 		JLabel bg = new JLabel("");
 		bg.setBounds(5, 5, 410, 290);
@@ -123,17 +139,13 @@ public class CS10FinalProject
 		ab2.setBounds(174, 389, 125, 125);
 		frame.getContentPane().add(ab2);
 		
-		JButton ab3 = new JButton("DeBuff");
+		JButton ab3 = new JButton("Debuff");
 		ab3.setBounds(309, 459, 125, 125);
 		frame.getContentPane().add(ab3);	
 
 		JButton qt = new JButton("Quit");
 		qt.setBounds(174, 535, 125, 125);
 		frame.getContentPane().add(qt);	
-		
-		JButton fght = new JButton("Fight");
-		fght.setBounds(174, 389, 125, 125);
-		frame.getContentPane().add(fght);
 		
 		hp.setVisible(false);
 		run.setVisible(false);
@@ -144,7 +156,13 @@ public class CS10FinalProject
 		ab3.setVisible(false);
 		yes.setVisible(false);
 		no.setVisible(false);
+		hpbar.setVisible(false);
+		hpbar1.setVisible(false);
 		
+		//hp of your char
+		int hp1= 100;
+		//hp of your enemy
+		int hp2= 100;
 		
 		Start.addActionListener(new ActionListener() 
 		{
@@ -157,7 +175,11 @@ public class CS10FinalProject
 				run.setVisible(true);
 				qt.setVisible(true);
 				fght.setVisible(true);
+				hpbar.setVisible(true);
+				hpbar1.setVisible(true);
 				Start.setVisible(false);
+				hpbar.setValue(hp1);
+				hpbar1.setValue(hp2);
 			}
 		});	
 		
@@ -188,7 +210,9 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{	
-				effect.setIcon(slash1);	
+				effect.setIcon(slash1);
+				
+				effect.setIcon(null);
 			}
 		});
 		
@@ -210,7 +234,56 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
-			}
-		});
+				Enemy.setIcon(null);	
+				Char.setIcon(null);
+				effect.setIcon(null);
+				bg.setIcon(null);
+				hpbar.setVisible(false);
+				hpbar1.setVisible(false);
+				bg.setIcon(quit1);
+				
+				yes.addActionListener(new ActionListener() 
+				{
+					public void actionPerformed(ActionEvent e) 
+					{
+						//puts program to sleep
+						try 
+						{
+							Thread.sleep(1500);
+						} catch (InterruptedException e1) 
+						{
+							e1.printStackTrace();
+						}	
+						System.exit(0); // ends program	
+					}
+					});
+				
+				no.addActionListener(new ActionListener() 
+				{
+					public void actionPerformed(ActionEvent e) 
+					{
+						bg.setIcon(bg1);
+						Enemy.setIcon(nmy1);
+						Char.setIcon(Char1);
+						hp.setVisible(true);
+						run.setVisible(true);
+						qt.setVisible(true);
+						fght.setVisible(true);
+						hpbar.setVisible(true);
+						hpbar1.setVisible(true);
+						Start.setVisible(false);
+						hpbar.setValue(hp1);
+						hpbar1.setValue(hp2);	
+					}
+					
+					
+					});
+				
+				
+				
+				
+				
+				}
+			});
 	}
 }
