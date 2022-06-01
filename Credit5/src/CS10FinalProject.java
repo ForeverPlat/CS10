@@ -224,7 +224,12 @@ public class CS10FinalProject
 					}
 				};
 						
-				timer.schedule(task, 300);		
+				timer.schedule(task, 300);	
+				
+				//sets damage range from 10 - 20%
+				int dmg = 11 + (int)(Math.random()*20);
+				
+				int hp2 = hp2 - dmg;
 			}
 		});
 		
