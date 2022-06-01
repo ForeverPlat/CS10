@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
@@ -208,11 +210,21 @@ public class CS10FinalProject
 		
 		ab1.addActionListener(new ActionListener() 
 		{
+			
 			public void actionPerformed(ActionEvent e) 
 			{	
 				effect.setIcon(slash1);
+				Timer timer = new Timer();
 				
-				effect.setIcon(null);
+				TimerTask task = new TimerTask() 
+				{
+					public void run() 
+					{
+						effect.setIcon(null);
+					}
+				};
+						
+				timer.schedule(task, 300);		
 			}
 		});
 		
