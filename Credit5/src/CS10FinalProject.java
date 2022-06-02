@@ -241,19 +241,13 @@ public class CS10FinalProject
 			
 			public void actionPerformed(ActionEvent e) 
 			{	
-<<<<<<< HEAD
 				//sets damage range from 10 - 20%
 				int dmg1 = 11 + (int)(Math.random()*10);
 				int hp2 = hpbar1.getValue();
 				hp2 = hp2 - dmg1;
 				hpbar1.setValue(hp2);
 				effect.setIcon(slash);
-=======
-				effect.setIcon(slash1);
-				Timer timer = new Timer();
->>>>>>> branch 'master' of https://github.com/ForeverPlat/CS10
 				
-<<<<<<< HEAD
 				Timer timerWait = new Timer();					
 				TimerTask taskWait = new TimerTask() 
 				{
@@ -317,22 +311,6 @@ public class CS10FinalProject
 				
 				
 				
-=======
-				TimerTask task = new TimerTask() 
-				{
-					public void run() 
-					{
-						effect.setIcon(null);
-					}
-				};
-						
-				timer.schedule(task, 300);	
-				
-				//sets damage range from 10 - 20%
-				int dmg = 11 + (int)(Math.random()*20);
-				
-				int hp2 = hp2 - dmg;
->>>>>>> branch 'master' of https://github.com/ForeverPlat/CS10
 			}
 		});
 		
