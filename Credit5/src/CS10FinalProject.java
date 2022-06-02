@@ -112,7 +112,7 @@ public class CS10FinalProject
 		panel_3.add(hpbar1);
 		
 		JLabel BBeffect = new JLabel("");
-		BBeffect.setBounds(133, 10, 180, 222);
+		BBeffect.setBounds(128, 10, 180, 222);
 		panel_3.add(BBeffect);
 		
 		JLabel Char = new JLabel("");
