@@ -36,7 +36,8 @@ public class CS10FinalProject
 	ImageIcon slash = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\SLASH.png");
 	ImageIcon quit = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\quit1.png");
 	ImageIcon BlueBullet = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/BlueBullet.png");
-			
+	ImageIcon shield = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Shield.png");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -82,11 +83,11 @@ public class CS10FinalProject
 		frame.getContentPane().add(Start);
 
 		JButton fght = new JButton("Fight");
-		fght.setBounds(174, 389, 125, 125);
+		fght.setBounds(174, 399, 125, 125);
 		frame.getContentPane().add(fght);
 		
 		JButton hp = new JButton("HP");
-		hp.setBounds(39, 459, 125, 125);
+		hp.setBounds(39, 463, 125, 125);
 		frame.getContentPane().add(hp);
 		
 		JPanel panel_3 = new JPanel();
@@ -114,6 +115,10 @@ public class CS10FinalProject
 		JLabel BBeffect = new JLabel("");
 		BBeffect.setBounds(128, 10, 180, 222);
 		panel_3.add(BBeffect);
+
+		JLabel ShieldEffect = new JLabel("");
+		ShieldEffect.setBounds(71, 74, 190, 190);
+		panel_3.add(ShieldEffect);
 		
 		JLabel Char = new JLabel("");
 		Char.setBounds(10, 28, 211, 225);
@@ -132,27 +137,31 @@ public class CS10FinalProject
 		panel_3.add(bg);
 		
 		JButton run = new JButton("Run");
-		run.setBounds(309, 459, 125, 125);
+		run.setBounds(309, 463, 125, 125);
 		frame.getContentPane().add(run);
 		
 		JButton yes = new JButton("Yes");
-		yes.setBounds(39, 459, 125, 125);
+		yes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		yes.setBounds(39, 463, 125, 125);
 		frame.getContentPane().add(yes);
 		
 		JButton no = new JButton("No");
-		no.setBounds(309, 459, 125, 125);
+		no.setBounds(309, 463, 125, 125);
 		frame.getContentPane().add(no);
 		
 		JButton ab1 = new JButton("Slash");
-		ab1.setBounds(39, 459, 125, 125);
+		ab1.setBounds(39, 463, 125, 125);
 		frame.getContentPane().add(ab1);
 		
 		JButton ab2 = new JButton("Shield");
-		ab2.setBounds(174, 389, 125, 125);
+		ab2.setBounds(309, 463, 125, 125);
 		frame.getContentPane().add(ab2);
 		
 		JButton ab3 = new JButton("Debuff");
-		ab3.setBounds(309, 459, 125, 125);
+		ab3.setBounds(174, 399, 125, 125);
 		frame.getContentPane().add(ab3);	
 
 		JButton qt = new JButton("Quit");
@@ -314,8 +323,13 @@ public class CS10FinalProject
 			}
 		});
 		
-		
-		
+		ab2.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				ShieldEffect.setIcon(shield);
+			}
+		});
 		
 		hp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
