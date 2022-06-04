@@ -39,6 +39,8 @@ public class CS10FinalProject
 	ImageIcon shield = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/Shield.png");
 	ImageIcon ShieldChar = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/ShieldChar.png");
 	ImageIcon Healing = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/HealingEffect.png");
+	ImageIcon Saiyan = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/Saiyan.png");
+
 	
 	/**
 	 * Launch the application.
@@ -122,6 +124,10 @@ public class CS10FinalProject
 		BBeffect.setBounds(128, 10, 180, 222);
 		panel_3.add(BBeffect);
 
+		JLabel EnemyPower = new JLabel("");
+		EnemyPower.setBounds(175, 5, 239, 195);
+		panel_3.add(EnemyPower);
+
 		JLabel ShieldEffect = new JLabel("");
 		ShieldEffect.setBounds(86, 39, 117, 220);
 		panel_3.add(ShieldEffect);
@@ -133,7 +139,7 @@ public class CS10FinalProject
 		JLabel effect = new JLabel("");
 		effect.setBounds(110, 37, 180, 222);
 		panel_3.add(effect);
-
+		
 		JLabel Enemy = new JLabel("");
 		Enemy.setBounds(296, 33, 65, 151);
 		panel_3.add(Enemy);
@@ -280,6 +286,26 @@ public class CS10FinalProject
 						int dmg2 = 11 + (int)(Math.random()*10);
 						int hp1 = hpbar.getValue();
 						hp1 = hp1 - dmg2;
+						
+						
+						//Characters power up
+						if(hp1 < 50) 
+						{
+							Enemy.setIcon(null);
+							Timer timer = new Timer();					
+							TimerTask task = new TimerTask() 
+							{
+								public void run() 
+								{
+									//Check as to why the Icon doesn't function
+									Enemy.setIcon(Saiyan);
+								}
+							};
+							//timer for enemy attack disappear		
+							timer.schedule(task, 900);	
+						}
+						//end of power up code
+						
 						hpbar.setValue(hp1);
 						BBeffect.setIcon(BlueBullet);
 						
