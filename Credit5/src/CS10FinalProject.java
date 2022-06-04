@@ -30,13 +30,15 @@ public class CS10FinalProject
 
 	private JFrame frame;
 	
-	ImageIcon bg1 = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\bg1.png");
-	ImageIcon nmy1 = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Enemy.png");
-	ImageIcon sprite = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\Char.png");
-	ImageIcon slash = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\SLASH.png");
-	ImageIcon quit = new ImageIcon("C:\\Users\\57013002\\git\\CS10\\Credit5\\src\\quit1.png");
-	ImageIcon BlueBullet = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/BlueBullet.png");
-	ImageIcon shield = new ImageIcon("C:/Users/57013002/git/CS10/Credit5/src/Shield.png");
+	ImageIcon bg1 = new ImageIcon("C:\\Users\\LuqMan\\git\\CS10\\Credit5\\src\\bg1.png");
+	ImageIcon nmy1 = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/Enemy.png");
+	ImageIcon sprite = new ImageIcon("C:\\Users\\LuqMan\\git\\CS10\\Credit5\\src\\Char.png");
+	ImageIcon slash = new ImageIcon("C:\\Users\\LuqMan\\git\\CS10\\Credit5\\src\\SLASH.png");
+	ImageIcon quit = new ImageIcon("C:\\Users\\LuqMan\\git\\CS10\\Credit5\\src\\quit1.png");
+	ImageIcon BlueBullet = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/BlueBullet.png");
+	ImageIcon shield = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/Shield.png");
+	ImageIcon ShieldChar = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/ShieldChar.png");
+	ImageIcon Healing = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/HealingEffect.png");
 	
 	/**
 	 * Launch the application.
@@ -112,12 +114,16 @@ public class CS10FinalProject
 		hpbar1.setBounds(252, 201, 146, 14);
 		panel_3.add(hpbar1);
 		
+		JLabel HealingEffect = new JLabel("");
+		HealingEffect.setBounds(72, 97, 98, 107);
+		panel_3.add(HealingEffect);
+		
 		JLabel BBeffect = new JLabel("");
 		BBeffect.setBounds(128, 10, 180, 222);
 		panel_3.add(BBeffect);
 
 		JLabel ShieldEffect = new JLabel("");
-		ShieldEffect.setBounds(71, 74, 190, 190);
+		ShieldEffect.setBounds(86, 39, 117, 220);
 		panel_3.add(ShieldEffect);
 		
 		JLabel Char = new JLabel("");
@@ -129,7 +135,7 @@ public class CS10FinalProject
 		panel_3.add(effect);
 
 		JLabel Enemy = new JLabel("");
-		Enemy.setBounds(275, 10, 73, 169);
+		Enemy.setBounds(296, 33, 65, 151);
 		panel_3.add(Enemy);
 		
 		JLabel bg = new JLabel("");
@@ -160,7 +166,7 @@ public class CS10FinalProject
 		ab2.setBounds(309, 463, 125, 125);
 		frame.getContentPane().add(ab2);
 		
-		JButton ab3 = new JButton("Debuff");
+		JButton ab3 = new JButton("Power Up");
 		ab3.setBounds(174, 399, 125, 125);
 		frame.getContentPane().add(ab3);	
 
@@ -172,7 +178,13 @@ public class CS10FinalProject
 		rtrn.setBounds(174, 535, 125, 125);
 		frame.getContentPane().add(rtrn);
 		
+		JButton FakeHp = new JButton("HP");
+		FakeHp.setBackground(Color.GRAY);
+		FakeHp.setForeground(SystemColor.inactiveCaptionText);
+		FakeHp.setBounds(39, 463, 125, 125);
+		frame.getContentPane().add(FakeHp);
 		
+		FakeHp.setVisible(false);
 		hp.setVisible(false);
 		run.setVisible(false);
 		qt.setVisible(false);
@@ -200,6 +212,7 @@ public class CS10FinalProject
 				hpbar.setVisible(true);
 				hpbar1.setVisible(true);
 				Start.setVisible(false);
+				FakeHp.setVisible(true);
 			}
 		});	
 		
@@ -225,6 +238,7 @@ public class CS10FinalProject
 				ab2.setVisible(false);
 				ab3.setVisible(false);
 				rtrn.setVisible(false);
+				FakeHp.setVisible(true);
 			}
 		});
 	
@@ -232,6 +246,7 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				FakeHp.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(false);
 				no.setVisible(false);
@@ -275,6 +290,7 @@ public class CS10FinalProject
 							{
 								BBeffect.setIcon(null);
 
+								FakeHp.setVisible(false);
 								hp.setVisible(true);
 								yes.setVisible(true);
 								no.setVisible(true);
@@ -285,6 +301,8 @@ public class CS10FinalProject
 								ab1.setVisible(true);
 								ab2.setVisible(true);
 								ab3.setVisible(true);
+								FakeHp.setVisible(true);
+
 							}
 						};
 						//timer for enemy attack disappear		
@@ -292,6 +310,7 @@ public class CS10FinalProject
 					}
 				};
 				
+				FakeHp.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(false);
 				no.setVisible(false);
@@ -328,11 +347,100 @@ public class CS10FinalProject
 			public void actionPerformed(ActionEvent e) 
 			{
 				ShieldEffect.setIcon(shield);
+				Char.setIcon(ShieldChar);
+				Char.setBounds(-35, 28, 211, 225);
+				BBeffect.setIcon(BlueBullet);
+				
+				FakeHp.setVisible(false);
+				hp.setVisible(false);
+				yes.setVisible(false);
+				no.setVisible(false);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				qt.setVisible(false);
+				rtrn.setVisible(false);
+				ab1.setVisible(false);
+				ab2.setVisible(false);
+				ab3.setVisible(false);
+				
+				Timer timer = new Timer();					
+				TimerTask task = new TimerTask() 
+				{
+					public void run() 
+					{
+						BBeffect.setIcon(null);
+						Char.setIcon(sprite);
+						Char.setBounds(10, 28, 211, 225);
+						ShieldEffect.setIcon(null);
+
+						hp.setVisible(true);
+						yes.setVisible(true);
+						no.setVisible(true);
+						fght.setVisible(true);
+						run.setVisible(true);	
+						qt.setVisible(true);
+						rtrn.setVisible(true);
+						ab1.setVisible(true);
+						ab2.setVisible(true);
+						ab3.setVisible(true);
+						FakeHp.setVisible(true);
+
+					}
+				};
+				//timer for enemy attack disappear		
+				timer.schedule(task, 900);
 			}
 		});
 		
-		hp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		/*
+		 ab3: On the original click of the button you will take dmg, but after that is when u will get 
+		the better ability
+		*/
+		
+		hp.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				hp.setVisible(false);
+				yes.setVisible(false);
+				no.setVisible(false);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				qt.setVisible(false);
+				rtrn.setVisible(false);
+				ab1.setVisible(false);
+				ab2.setVisible(false);
+				ab3.setVisible(false);
+				
+				//make healing gui image bigger
+				HealingEffect.setIcon(Healing);
+				int hp1 = hpbar.getValue();
+				hp1 = hp1 + 40;
+				hpbar.setValue(hp1);
+				frame.remove(hp);
+				
+				Timer timer = new Timer();					
+				TimerTask task = new TimerTask() 
+				{	
+					public void run() 
+					{
+						HealingEffect.setIcon(null);
+						
+						FakeHp.setVisible(true);
+						hp.setVisible(false);
+						yes.setVisible(false);
+						no.setVisible(false);
+						fght.setVisible(true);
+						run.setVisible(true);	
+						qt.setVisible(true);
+						rtrn.setVisible(false);
+						ab1.setVisible(false);
+						ab2.setVisible(false);
+						ab3.setVisible(false);
+					}
+				};
+				//timer for healing gui to leave		
+				timer.schedule(task, 800);
 			}
 		});
 		
