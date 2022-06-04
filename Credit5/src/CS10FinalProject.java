@@ -40,6 +40,7 @@ public class CS10FinalProject
 	ImageIcon ShieldChar = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/ShieldChar.png");
 	ImageIcon Healing = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/HealingEffect.png");
 	ImageIcon Saiyan = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/Saiyan.png");
+	ImageIcon PowerChar = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/PowerChar.png");
 
 	
 	/**
@@ -234,6 +235,8 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				rtrn.setBounds(174, 535, 125, 125);
+				qt.setBounds(174, 535, 125, 125);
 				// makes main buttons visible
 				fght.setVisible(true);
 				qt.setVisible(true);
@@ -252,6 +255,8 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				rtrn.setBounds(174, 535, 125, 125);
+				qt.setBounds(174, 535, 125, 125);
 				FakeHp.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(false);
@@ -422,11 +427,115 @@ public class CS10FinalProject
 		 ab3: On the original click of the button you will take dmg, but after that is when u will get 
 		the better ability
 		*/
+		ab3.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent e) 
+			{	
+				FakeHp.setVisible(false);
+				hp.setVisible(false);
+				yes.setVisible(false);
+				no.setVisible(false);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				qt.setVisible(false);
+				rtrn.setVisible(false);
+				ab1.setVisible(false);
+				ab2.setVisible(false);
+				ab3.setVisible(false);
+
+
+				//Sprite power up
+				Char.setIcon(null);
+				Timer timer = new Timer();					
+				TimerTask task = new TimerTask()
+			
+				{
+					public void run() 
+					{
+						Char.setIcon(PowerChar);
+					}
+				};
+				//timer for enemy attack disappear		
+				timer.schedule(task, 900);
+				
+				Timer timerWait = new Timer();					
+				TimerTask taskWait = new TimerTask() 
+				{
+					public void run() 
+					{
+						//Enemy Attack
+						int dmg2 = 11 + (int)(Math.random()*10);
+						int hp1 = hpbar.getValue();
+						hp1 = hp1 - dmg2;
+						//End of Enemy Attack
+						
+						//Enemy power up
+						if(hp1 < 50) 
+						{
+							Enemy.setIcon(null);
+							Timer timer = new Timer();					
+							TimerTask task = new TimerTask() 
+							{
+								public void run() 
+								{
+									//Check as to why the Icon doesn't function
+									Enemy.setIcon(Saiyan);
+								}
+							};
+							//timer for enemy attack disappear		
+							timer.schedule(task, 900);	
+						}
+						//end of power up code
+						
+						
+						hpbar.setValue(hp1);
+						BBeffect.setIcon(BlueBullet);
+						
+						Timer timer = new Timer();					
+						TimerTask task = new TimerTask() 
+						{
+							public void run() 
+							{
+								BBeffect.setIcon(null);
+								rtrn.setVisible(true);
+								qt.setVisible(true);
+								rtrn.setBounds(120, 535, 125, 125);
+								qt.setBounds(250, 535, 125, 125);
+							}
+						};
+						//timer for enemy attack disappear		
+						timer.schedule(task, 900);
+						
+					}
+				};
+				
+				FakeHp.setVisible(false);
+				hp.setVisible(false);
+				yes.setVisible(false);
+				no.setVisible(false);
+				fght.setVisible(false);
+				run.setVisible(false);	
+				qt.setVisible(false);
+				rtrn.setVisible(false);
+				ab1.setVisible(false);
+				ab2.setVisible(false);
+				ab3.setVisible(false);
+				
+				//Timer for enemy attack		
+				timerWait.schedule(taskWait, 1600);		
+				
+			}
+		});
+		
+		
 		
 		hp.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				rtrn.setBounds(174, 535, 125, 125);
+				qt.setBounds(174, 535, 125, 125);
 				hp.setVisible(false);
 				yes.setVisible(false);
 				no.setVisible(false);
@@ -474,6 +583,8 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				rtrn.setBounds(174, 535, 125, 125);
+				qt.setBounds(174, 535, 125, 125);
 				qt.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(true);
@@ -510,6 +621,8 @@ public class CS10FinalProject
 				{
 					public void actionPerformed(ActionEvent e) 
 					{
+						rtrn.setBounds(174, 535, 125, 125);
+						qt.setBounds(174, 535, 125, 125);
 						bg.setIcon(bg1);
 						Enemy.setIcon(nmy1);
 						Char.setIcon(sprite);
@@ -520,6 +633,7 @@ public class CS10FinalProject
 						hpbar.setVisible(true);
 						hpbar1.setVisible(true);
 						Start.setVisible(false);	
+						
 					}
 					
 					
