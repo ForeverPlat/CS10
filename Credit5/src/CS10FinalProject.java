@@ -176,6 +176,10 @@ public class CS10FinalProject
 		JButton ab3 = new JButton("Power Up");
 		ab3.setBounds(174, 399, 125, 125);
 		frame.getContentPane().add(ab3);	
+		
+		JButton PowerAbility = new JButton("PowerSlash");
+		PowerAbility.setBounds(174, 399, 125, 125);
+		frame.getContentPane().add(PowerAbility);
 
 		JButton qt = new JButton("Quit");
 		qt.setBounds(174, 535, 125, 125);
@@ -191,6 +195,7 @@ public class CS10FinalProject
 		FakeHp.setBounds(39, 463, 125, 125);
 		frame.getContentPane().add(FakeHp);
 		
+		PowerAbility.setVisible(false);
 		FakeHp.setVisible(false);
 		hp.setVisible(false);
 		run.setVisible(false);
@@ -220,6 +225,8 @@ public class CS10FinalProject
 				hpbar1.setVisible(true);
 				Start.setVisible(false);
 				FakeHp.setVisible(true);
+				PowerAbility.setVisible(true);
+
 			}
 		});	
 		
@@ -248,6 +255,7 @@ public class CS10FinalProject
 				ab3.setVisible(false);
 				rtrn.setVisible(false);
 				FakeHp.setVisible(true);
+				PowerAbility.setVisible(false);
 			}
 		});
 	
@@ -257,6 +265,7 @@ public class CS10FinalProject
 			{
 				rtrn.setBounds(174, 535, 125, 125);
 				qt.setBounds(174, 535, 125, 125);
+				PowerAbility.setVisible(false);
 				FakeHp.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(false);
@@ -333,7 +342,7 @@ public class CS10FinalProject
 								ab2.setVisible(true);
 								ab3.setVisible(true);
 								FakeHp.setVisible(true);
-
+								PowerAbility.setVisible(true);
 							}
 						};
 						//timer for enemy attack disappear		
@@ -352,6 +361,7 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
+				PowerAbility.setVisible(false);
 				
 				//Timer for enemy attack		
 				timerWait.schedule(taskWait, 1600);			
@@ -393,6 +403,7 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
+				PowerAbility.setVisible(false);
 				
 				Timer timer = new Timer();					
 				TimerTask task = new TimerTask() 
@@ -415,6 +426,7 @@ public class CS10FinalProject
 						ab2.setVisible(true);
 						ab3.setVisible(true);
 						FakeHp.setVisible(true);
+						PowerAbility.setVisible(true);
 
 					}
 				};
@@ -443,7 +455,7 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
-
+				PowerAbility.setVisible(false);
 
 				//Sprite power up
 				Char.setIcon(null);
@@ -454,6 +466,7 @@ public class CS10FinalProject
 					public void run() 
 					{
 						Char.setIcon(PowerChar);
+						
 					}
 				};
 				//timer for enemy attack disappear		
@@ -500,8 +513,9 @@ public class CS10FinalProject
 								BBeffect.setIcon(null);
 								rtrn.setVisible(true);
 								qt.setVisible(true);
-								rtrn.setBounds(120, 535, 125, 125);
-								qt.setBounds(250, 535, 125, 125);
+								PowerAbility.setVisible(true);
+								rtrn.setBounds(110, 535, 125, 125);
+								qt.setBounds(240, 535, 125, 125);
 							}
 						};
 						//timer for enemy attack disappear		
@@ -521,6 +535,7 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
+				PowerAbility.setVisible(false);
 				
 				//Timer for enemy attack		
 				timerWait.schedule(taskWait, 1600);		
@@ -546,6 +561,7 @@ public class CS10FinalProject
 				ab1.setVisible(false);
 				ab2.setVisible(false);
 				ab3.setVisible(false);
+				PowerAbility.setVisible(false);
 				
 				//make healing gui image bigger
 				HealingEffect.setIcon(Healing);
@@ -572,6 +588,7 @@ public class CS10FinalProject
 						ab1.setVisible(false);
 						ab2.setVisible(false);
 						ab3.setVisible(false);
+						PowerAbility.setVisible(false);
 					}
 				};
 				//timer for healing gui to leave		
@@ -599,7 +616,10 @@ public class CS10FinalProject
 				effect.setIcon(null);
 				hpbar.setVisible(false);
 				hpbar1.setVisible(false);
+				PowerAbility.setVisible(false);
+				rtrn.setVisible(false);
 				bg.setIcon(quit);
+				
 				
 				yes.addActionListener(new ActionListener() 
 				{
@@ -621,18 +641,38 @@ public class CS10FinalProject
 				{
 					public void actionPerformed(ActionEvent e) 
 					{
+						
 						rtrn.setBounds(174, 535, 125, 125);
 						qt.setBounds(174, 535, 125, 125);
 						bg.setIcon(bg1);
 						Enemy.setIcon(nmy1);
-						Char.setIcon(sprite);
 						hp.setVisible(true);
 						run.setVisible(true);
 						qt.setVisible(true);
 						fght.setVisible(true);
 						hpbar.setVisible(true);
 						hpbar1.setVisible(true);
-						Start.setVisible(false);	
+						PowerAbility.setVisible(false);
+						Start.setVisible(false);
+						
+						if (ab3.getModel().isPressed()) 
+						{
+							Char.setIcon(null);
+							Timer timer = new Timer();					
+							TimerTask task = new TimerTask() 
+							{
+								public void run() 
+								{
+									Char.setIcon(PowerChar);
+								}
+							};
+						//	
+							timer.schedule(task, 300);	
+						}
+						
+						{
+							
+						}
 						
 					}
 					
