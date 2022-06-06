@@ -612,78 +612,66 @@ public class CS10FinalProject
 				ab2.setVisible(false);
 				ab3.setVisible(false);
 				Enemy.setIcon(null);	
-				Char.setIcon(null);
 				effect.setIcon(null);
 				hpbar.setVisible(false);
 				hpbar1.setVisible(false);
 				PowerAbility.setVisible(false);
 				rtrn.setVisible(false);
 				bg.setIcon(quit);
-				
-				
-				yes.addActionListener(new ActionListener() 
-				{
-					public void actionPerformed(ActionEvent e) 
-					{
-						//puts program to sleep
-						try 
-						{
-							Thread.sleep(1500);
-						} catch (InterruptedException e1) 
-						{
-							e1.printStackTrace();
-						}	
-						System.exit(0); // ends program	
-					}
-					});
-				
-				no.addActionListener(new ActionListener() 
-				{
-					public void actionPerformed(ActionEvent e) 
-					{
-						
-						rtrn.setBounds(174, 535, 125, 125);
-						qt.setBounds(174, 535, 125, 125);
-						bg.setIcon(bg1);
-						Enemy.setIcon(nmy1);
-						hp.setVisible(true);
-						run.setVisible(true);
-						qt.setVisible(true);
-						fght.setVisible(true);
-						hpbar.setVisible(true);
-						hpbar1.setVisible(true);
-						PowerAbility.setVisible(false);
-						Start.setVisible(false);
-						
-						if (ab3.getModel().isPressed()) 
-						{
-							Char.setIcon(null);
-							Timer timer = new Timer();					
-							TimerTask task = new TimerTask() 
-							{
-								public void run() 
-								{
-									Char.setIcon(PowerChar);
-								}
-							};
-						//	
-							timer.schedule(task, 300);	
-						}
-						
-						{
-							
-						}
-						
-					}
-					
-					
-					});
-				
-				
-				
-				
-				
+				Char.setIcon(null);
 				}
 			});
+		
+		yes.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				//puts program to sleep
+				try 
+				{
+					Thread.sleep(1500);
+				} catch (InterruptedException e1) 
+				{
+					e1.printStackTrace();
+				}	
+				System.exit(0); // ends program	
+			}
+			});
+		no.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				rtrn.setBounds(174, 535, 125, 125);
+				qt.setBounds(174, 535, 125, 125);
+				bg.setIcon(bg1);
+				Enemy.setIcon(nmy1);
+				hp.setVisible(true);
+				run.setVisible(true);
+				qt.setVisible(true);
+				fght.setVisible(true);
+				hpbar.setVisible(true);
+				hpbar1.setVisible(true);
+				PowerAbility.setVisible(false);
+				Start.setVisible(false);
+				
+				if (ab3.getModel().isPressed()) 
+				{
+					Char.setIcon(null);
+					Timer timer = new Timer();					
+					TimerTask task = new TimerTask() 
+					{
+						public void run() 
+						{
+							Char.setIcon(PowerChar);
+						}
+					};
+				
+					timer.schedule(task, 300);	
+				}	
+			}
+			});
+
+		
 	}
 }
