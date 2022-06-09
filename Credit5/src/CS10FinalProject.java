@@ -828,7 +828,7 @@ public class CS10FinalProject
 				
 			}
 		});
-		//ok
+		//o
 		hp.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
