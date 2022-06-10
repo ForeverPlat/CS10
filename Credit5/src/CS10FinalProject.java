@@ -44,6 +44,9 @@ public class CS10FinalProject
 	ImageIcon win = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/win.png");
 	ImageIcon dead = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/dead.jpg");
 	ImageIcon run = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/run.png");
+	ImageIcon EnemyPowerAbility = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/BlueStream.png");
+	ImageIcon FullSlash = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/FullSash.png");
+
 	
 	/**
 	 * Launch the application.
@@ -103,6 +106,18 @@ public class CS10FinalProject
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
+		JLabel FullSlashIcon = new JLabel("");
+		FullSlashIcon.setBounds(5, 5, 410, 290);
+		panel_3.add(FullSlashIcon);
+		
+		JProgressBar mana = new JProgressBar();
+		mana.setValue(50);
+		mana.setBackground(Color.LIGHT_GRAY);
+		mana.setForeground(Color.CYAN);
+		mana.setBounds(20, 50, 146, 5);
+		mana.setVisible(false);
+		panel_3.add(mana);
+
 		JProgressBar hpbar = new JProgressBar();
 		hpbar.setValue(100);
 		hpbar.setStringPainted(true);
@@ -127,14 +142,6 @@ public class CS10FinalProject
 		BBeffect.setBounds(128, 10, 180, 222);
 		panel_3.add(BBeffect);
 
-		JLabel EnemyPower = new JLabel("");
-		EnemyPower.setBounds(175, 5, 239, 195);
-		panel_3.add(EnemyPower);
-
-		JLabel ShieldEffect = new JLabel("");
-		ShieldEffect.setBounds(86, 39, 117, 220);
-		panel_3.add(ShieldEffect);
-		
 		JLabel Char = new JLabel("");
 		Char.setBounds(10, 28, 211, 225);
 		panel_3.add(Char);
@@ -142,10 +149,22 @@ public class CS10FinalProject
 		JLabel effect = new JLabel("");
 		effect.setBounds(110, 37, 180, 222);
 		panel_3.add(effect);
+
+		JLabel ShieldEffect = new JLabel("");
+		ShieldEffect.setBounds(86, 39, 117, 220);
+		panel_3.add(ShieldEffect);
 		
 		JLabel Enemy = new JLabel("");
 		Enemy.setBounds(296, 33, 65, 151);
 		panel_3.add(Enemy);
+
+		JLabel EnemyPowerUpAbility = new JLabel("");
+		EnemyPowerUpAbility.setBounds(141, 66, 232, 165);
+		panel_3.add(EnemyPowerUpAbility);
+		
+		JLabel EnemyPower = new JLabel("");
+		EnemyPower.setBounds(193, -13, 239, 195);
+		panel_3.add(EnemyPower);
 		
 		JLabel bg = new JLabel("");
 		bg.setBounds(5, 5, 410, 290);
@@ -155,6 +174,11 @@ public class CS10FinalProject
 		powerup.setMaximum(2);
 		powerup.setBounds(0, 0, 0, 0);
 		panel_3.add(powerup);
+		
+		JProgressBar saiyan = new JProgressBar();
+		saiyan.setMaximum(1);
+		saiyan.setBounds(0, 0, 0, 0);
+		panel_3.add(saiyan);
 		
 		JButton rn = new JButton("Run");
 		rn.setBounds(309, 463, 125, 125);
@@ -205,7 +229,7 @@ public class CS10FinalProject
 		FakeHp.setForeground(SystemColor.inactiveCaptionText);
 		FakeHp.setBounds(39, 463, 125, 125);
 		frame.getContentPane().add(FakeHp);
-		
+				
 		ab4.setVisible(false);
 		FakeHp.setVisible(false);
 		hp.setVisible(false);
@@ -242,6 +266,7 @@ public class CS10FinalProject
 				ab4.setVisible(true);
 				ab3Quit.setVisible(false);
 				ab3No.setVisible(false);
+				mana.setVisible(true);
 
 			}
 		});	
@@ -269,6 +294,7 @@ public class CS10FinalProject
 				powerup.setVisible(false);
 				ab3Quit.setVisible(false);
 				ab3No.setVisible(false);
+				mana.setVisible(false);
 				Enemy.setIcon(null);
 				Char.setIcon(null);
 				
@@ -293,6 +319,7 @@ public class CS10FinalProject
 						// makes hp bars visible
 						hpbar.setVisible(true);
 						hpbar1.setVisible(true);
+						mana.setVisible(true);
 						
 						
 						
@@ -316,6 +343,7 @@ public class CS10FinalProject
 							ab3Quit.setVisible(false);
 							ab3No.setVisible(false);
 							Char.setVisible(false);
+							mana.setVisible(false);
 							Enemy.setVisible(false);
 							effect.setVisible(false);
 							BBeffect.setVisible(false);
@@ -388,6 +416,10 @@ public class CS10FinalProject
 			
 			public void actionPerformed(ActionEvent e) 
 			{	
+				int man = mana.getValue();
+				man = man + 5;
+				mana.setValue(man);
+				
 				//sets damage range from 10 - 20%
 				int dmg1 = 11 + (int)(Math.random()*10);
 				int hp2 = hpbar1.getValue();
@@ -427,6 +459,7 @@ public class CS10FinalProject
 							Enemy.setVisible(false);
 							effect.setVisible(false);
 							BBeffect.setVisible(false);
+							mana.setVisible(false);
 							
 							bg.setIcon(dead);
 							
@@ -444,7 +477,13 @@ public class CS10FinalProject
 						}
 						
 						//Characters power up
-						if(hp1 <= 50) 
+						int hps = hpbar1.getValue();
+						if (hps <= 50)
+						{
+							saiyan.setValue(1);
+						}
+						int say = saiyan.getValue();
+						if (say == 1)
 						{
 							Enemy.setIcon(null);
 							Timer timer = new Timer();					
@@ -453,7 +492,8 @@ public class CS10FinalProject
 								public void run() 
 								{
 									//Check as to why the Icon doesn't function
-									Enemy.setIcon(Saiyan);
+									EnemyPower.setIcon(Saiyan);
+									EnemyPowerUpAbility.setIcon(EnemyPowerAbility);
 								}
 							};
 							//timer for enemy attack disappear		
@@ -471,19 +511,11 @@ public class CS10FinalProject
 							{
 								BBeffect.setIcon(null);
 
-								FakeHp.setVisible(false);
+								FakeHp.setVisible(true);
 								hp.setVisible(true);
-								yes.setVisible(true);
-								no.setVisible(true);
 								fght.setVisible(true);
 								rn.setVisible(true);	
 								qt.setVisible(true);
-								rtrn.setVisible(true);
-								ab1.setVisible(true);
-								ab2.setVisible(true);
-								ab3.setVisible(true);
-								FakeHp.setVisible(true);
-								ab4.setVisible(true);
 							}
 						};
 						//timer for enemy attack disappear		
@@ -542,6 +574,7 @@ public class CS10FinalProject
 					Enemy.setVisible(false);
 					effect.setVisible(false);
 					BBeffect.setVisible(false);
+					mana.setVisible(false);
 					
 					bg.setIcon(win);
 
@@ -558,10 +591,6 @@ public class CS10FinalProject
 							
 					wintimer.schedule(win, 1500);
 				}
-				
-				
-				
-				
 			}
 		});
 		
@@ -569,6 +598,14 @@ public class CS10FinalProject
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				int mna = mana.getValue();
+				if (mna >= 5)
+				{
+					
+				int man = mana.getValue();
+				man = man - 5;
+				mana.setValue(man);
+				
 				ShieldEffect.setIcon(shield);
 				Char.setIcon(ShieldChar);
 				Char.setBounds(-35, 28, 211, 225);
@@ -609,11 +646,35 @@ public class CS10FinalProject
 						ab3.setVisible(true);
 						FakeHp.setVisible(true);
 						ab4.setVisible(true);
-
+						
+						int pw = powerup.getValue();
+						if (pw == 1) 
+						{
+							Char.setIcon(PowerChar);
+						}	
 					}
 				};
 				//timer for enemy attack disappear		
 				timer.schedule(task, 900);
+			}
+			else
+			{
+				int mn = mana.getValue();
+				mana.setForeground(Color.red);
+				mana.setValue(100);
+				Timer manatimer = new Timer();
+				
+				TimerTask manatask = new TimerTask() 
+				{
+					public void run() 
+					{
+						mana.setForeground(Color.cyan);
+						mana.setValue(mn);
+					}
+				};
+						
+				manatimer.schedule(manatask, 300);
+			}
 			}
 		});
 		
@@ -626,6 +687,13 @@ public class CS10FinalProject
 			
 			public void actionPerformed(ActionEvent e) 
 			{	
+				int mna = mana.getValue();
+				if (mna >= 60)
+				{	
+				int man = mana.getValue();
+				man = man - 70;
+				
+				mana.setValue(man);
 				FakeHp.setVisible(false);
 				hp.setVisible(false);
 				yes.setVisible(false);
@@ -649,7 +717,6 @@ public class CS10FinalProject
 					public void run() 
 					{
 						Char.setIcon(PowerChar);
-						
 					}
 				};
 				//timer for enemy attack disappear		
@@ -702,7 +769,9 @@ public class CS10FinalProject
 						//timer for enemy attack disappear		
 						timer.schedule(task, 900);
 						
-					}
+						
+						
+					} 
 				};
 				
 				FakeHp.setVisible(false);
@@ -721,7 +790,25 @@ public class CS10FinalProject
 				
 				//Timer for enemy attack		
 				timerWait.schedule(taskWait, 1600);		
-				
+				}
+				else
+				{
+					int mn = mana.getValue();
+					mana.setForeground(Color.red);
+					mana.setValue(100);
+					Timer manatimer = new Timer();
+					
+					TimerTask manatask = new TimerTask() 
+					{
+						public void run() 
+						{
+							mana.setForeground(Color.cyan);
+							mana.setValue(mn);
+						}
+					};
+							
+					manatimer.schedule(manatask, 300);
+				}
 			}
 		});
 		
@@ -730,12 +817,13 @@ public class CS10FinalProject
 			
 			public void actionPerformed(ActionEvent e) 
 			{	
-				//sets damage range from 20 - 30%
-				int dmg1 = 21 + (int)(Math.random()*10);
+				
+				//sets damage range from 30 - 40%
+				int dmg1 = 31 + (int)(Math.random()*10);
 				int hp2 = hpbar1.getValue();
 				hp2 = hp2 - dmg1;
 				hpbar1.setValue(hp2);
-				effect.setIcon(slash);
+				FullSlashIcon.setIcon(FullSlash);
 				
 				Timer timerWait = new Timer();					
 				TimerTask taskWait = new TimerTask() 
@@ -757,7 +845,7 @@ public class CS10FinalProject
 								public void run() 
 								{
 									//Check as to why the Icon doesn't function
-									Enemy.setIcon(Saiyan);
+									EnemyPower.setIcon(Saiyan);
 								}
 							};
 							//timer for enemy attack disappear		
@@ -775,19 +863,12 @@ public class CS10FinalProject
 							{
 								BBeffect.setIcon(null);
 
-								FakeHp.setVisible(false);
+								FakeHp.setVisible(true);
 								hp.setVisible(true);
-								yes.setVisible(true);
-								no.setVisible(true);
 								fght.setVisible(true);
 								rn.setVisible(true);	
 								qt.setVisible(true);
-								rtrn.setVisible(true);
-								ab1.setVisible(true);
-								ab2.setVisible(true);
-								ab3.setVisible(true);
-								FakeHp.setVisible(true);
-								ab4.setVisible(true);
+								
 							}
 						};
 						//timer for enemy attack disappear		
@@ -828,7 +909,7 @@ public class CS10FinalProject
 				
 			}
 		});
-		//o
+		
 		hp.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
@@ -851,7 +932,7 @@ public class CS10FinalProject
 				//make healing gui image bigger
 				HealingEffect.setIcon(Healing);
 				int hp1 = hpbar.getValue();
-				hp1 = hp1 + 40;
+				hp1 = hp1 + 15;
 				hpbar.setValue(hp1);
 				frame.remove(hp);
 				
@@ -912,6 +993,7 @@ public class CS10FinalProject
 				ab3No.setVisible(false);
 				bg.setIcon(quit);
 				Char.setIcon(null);
+				mana.setVisible(false);
 				}
 			});
 		
@@ -950,6 +1032,7 @@ public class CS10FinalProject
 				ab4.setVisible(false);
 				Start.setVisible(false);
 				ab3No.setVisible(false);
+				mana.setVisible(true);
 				
 				if (pw == 1) 
 				{
@@ -990,6 +1073,7 @@ public class CS10FinalProject
 				rtrn.setVisible(false);
 				ab3No.setVisible(true);
 				ab3Quit.setVisible(false);
+				mana.setVisible(false);
 				
 				bg.setIcon(quit);
 				Char.setIcon(null);
@@ -1016,7 +1100,7 @@ public class CS10FinalProject
 				yes.setVisible(false);
 				no.setVisible(false);
 				fght.setVisible(false);
-				
+				mana.setVisible(true);
 				
 				if (pw == 1) 
 				{
