@@ -1,3 +1,13 @@
+/*
+Program: Assignment11.java          Date: 6/13/2022
+
+
+Author: Luqman Ajani
+School: CHHS
+Course: Computer Science 10
+	 
+*/
+
 package Assignments;
 
 import java.util.Scanner;

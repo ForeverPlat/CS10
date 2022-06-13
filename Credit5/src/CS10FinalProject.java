@@ -1,3 +1,12 @@
+/*
+Program: CS10FinalProject.java          Date: 6/13/2022
+
+
+Author: Luqman Ajani
+School: CHHS
+Course: Computer Science 10
+	 
+*/
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -44,8 +53,8 @@ public class CS10FinalProject
 	ImageIcon win = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/win.png");
 	ImageIcon dead = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/dead.jpg");
 	ImageIcon run = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/run.png");
-	ImageIcon EnemyPowerAbility = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/BlueStream.png");
-	ImageIcon FullSlash = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/FullSash.png");
+	ImageIcon BlueStream = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/BlueStream.png");
+	ImageIcon FullSlash = new ImageIcon("C:/Users/LuqMan/git/CS10/Credit5/src/FullSlash.png");
 
 	
 	/**
@@ -347,6 +356,8 @@ public class CS10FinalProject
 							Enemy.setVisible(false);
 							effect.setVisible(false);
 							BBeffect.setVisible(false);
+							EnemyPowerUpAbility.setVisible(false);
+							EnemyPower.setVisible(false);
 							
 							bg.setIcon(dead);
 							
@@ -432,10 +443,78 @@ public class CS10FinalProject
 				{
 					public void run() 
 					{
+						int hpe = saiyan.getValue();
+						if (hpe == 1)
+						{							
+						int dmg2 = 26 + (int)(Math.random()*10);
+						int hp1 = hpbar.getValue();
+						hp1 = hp1 - dmg2;
+							if (hp1 <= 0)
+							{
+								ab4.setVisible(false);
+								FakeHp.setVisible(false);
+								hp.setVisible(false);
+								rn.setVisible(false);
+								qt.setVisible(false);
+								fght.setVisible(false);
+								ab1.setVisible(false);
+								ab2.setVisible(false);
+								ab3.setVisible(false);
+								yes.setVisible(false);
+								no.setVisible(false);
+								rtrn.setVisible(false);
+								hpbar.setVisible(false);
+								hpbar1.setVisible(false);
+								powerup.setVisible(false);
+								ab3Quit.setVisible(false);
+								ab3No.setVisible(false);
+								Char.setVisible(false);
+								Enemy.setVisible(false);
+								effect.setVisible(false);
+								BBeffect.setVisible(false);
+								mana.setVisible(false);
+								EnemyPowerUpAbility.setVisible(false);
+								EnemyPower.setVisible(false);
+								
+								bg.setIcon(dead);
+								
+								Timer deathtimer = new Timer();
+								
+								TimerTask death = new TimerTask() 
+								{
+									public void run() 
+									{
+										System.exit(0);
+									}
+								};
+										
+								deathtimer.schedule(death, 900);
+							}
+							EnemyPowerUpAbility.setIcon(BlueStream);
+							hpbar.setValue(hp1);
+							Timer timer = new Timer();					
+							TimerTask task = new TimerTask() 
+							{
+								public void run() 
+								{
+									EnemyPowerUpAbility.setIcon(null);
+
+									FakeHp.setVisible(true);
+									hp.setVisible(true);
+									fght.setVisible(true);
+									rn.setVisible(true);	
+									qt.setVisible(true);
+									
+								}
+							};
+							//timer for enemy attack disappear		
+							timer.schedule(task, 900);	
+						}
+						else
+						{
 						int dmg2 = 11 + (int)(Math.random()*10);
 						int hp1 = hpbar.getValue();
 						hp1 = hp1 - dmg2;
-						
 						if (hp1 <= 0)
 						{
 							ab4.setVisible(false);
@@ -460,6 +539,8 @@ public class CS10FinalProject
 							effect.setVisible(false);
 							BBeffect.setVisible(false);
 							mana.setVisible(false);
+							EnemyPowerUpAbility.setVisible(false);
+							EnemyPower.setVisible(false);
 							
 							bg.setIcon(dead);
 							
@@ -493,7 +574,69 @@ public class CS10FinalProject
 								{
 									//Check as to why the Icon doesn't function
 									EnemyPower.setIcon(Saiyan);
-									EnemyPowerUpAbility.setIcon(EnemyPowerAbility);
+									EnemyPowerUpAbility.setIcon(BlueStream);
+									int dmg2 = 26 + (int)(Math.random()*10);
+									int hp1 = hpbar.getValue();
+									hp1 = hp1 - dmg2;
+									if (hp1 <= 0)
+									{
+										ab4.setVisible(false);
+										FakeHp.setVisible(false);
+										hp.setVisible(false);
+										rn.setVisible(false);
+										qt.setVisible(false);
+										fght.setVisible(false);
+										ab1.setVisible(false);
+										ab2.setVisible(false);
+										ab3.setVisible(false);
+										yes.setVisible(false);
+										no.setVisible(false);
+										rtrn.setVisible(false);
+										hpbar.setVisible(false);
+										hpbar1.setVisible(false);
+										powerup.setVisible(false);
+										ab3Quit.setVisible(false);
+										ab3No.setVisible(false);
+										Char.setVisible(false);
+										Enemy.setVisible(false);
+										effect.setVisible(false);
+										BBeffect.setVisible(false);
+										mana.setVisible(false);
+										EnemyPowerUpAbility.setVisible(false);
+										EnemyPower.setVisible(false);
+										
+										bg.setIcon(dead);
+										
+										Timer deathtimer = new Timer();
+										
+										TimerTask death = new TimerTask() 
+										{
+											public void run() 
+											{
+												System.exit(0);
+											}
+										};
+												
+										deathtimer.schedule(death, 900);
+									}
+									hpbar.setValue(hp1);
+									Timer timer = new Timer();					
+									TimerTask task = new TimerTask() 
+									{
+										public void run() 
+										{
+											EnemyPowerUpAbility.setIcon(null);
+
+											FakeHp.setVisible(true);
+											hp.setVisible(true);
+											fght.setVisible(true);
+											rn.setVisible(true);	
+											qt.setVisible(true);
+											
+										}
+									};
+									//timer for enemy attack disappear		
+									timer.schedule(task, 900);	
 								}
 							};
 							//timer for enemy attack disappear		
@@ -521,6 +664,8 @@ public class CS10FinalProject
 						//timer for enemy attack disappear		
 						timer.schedule(task, 900);	
 					}
+					}
+				
 				};
 				
 				FakeHp.setVisible(false);
@@ -575,6 +720,8 @@ public class CS10FinalProject
 					effect.setVisible(false);
 					BBeffect.setVisible(false);
 					mana.setVisible(false);
+					EnemyPowerUpAbility.setVisible(false);
+					EnemyPower.setVisible(false);
 					
 					bg.setIcon(win);
 
@@ -609,6 +756,58 @@ public class CS10FinalProject
 				ShieldEffect.setIcon(shield);
 				Char.setIcon(ShieldChar);
 				Char.setBounds(-35, 28, 211, 225);
+				int hpe = saiyan.getValue();
+				if (hpe == 1)
+				{
+					EnemyPowerUpAbility.setIcon(BlueStream);
+					
+					FakeHp.setVisible(false);
+					hp.setVisible(false);
+					yes.setVisible(false);
+					no.setVisible(false);
+					fght.setVisible(false);
+					rn.setVisible(false);	
+					qt.setVisible(false);
+					rtrn.setVisible(false);
+					ab1.setVisible(false);
+					ab2.setVisible(false);
+					ab3.setVisible(false);
+					ab4.setVisible(false);
+					Timer timer = new Timer();					
+					TimerTask task = new TimerTask() 
+					{
+						public void run() 
+						{
+							EnemyPowerUpAbility.setIcon(null);
+							Char.setIcon(sprite);
+							Char.setBounds(10, 28, 211, 225);
+							ShieldEffect.setIcon(null);
+
+							hp.setVisible(true);
+							yes.setVisible(true);
+							no.setVisible(true);
+							fght.setVisible(true);
+							rn.setVisible(true);	
+							qt.setVisible(true);
+							rtrn.setVisible(true);
+							ab1.setVisible(true);
+							ab2.setVisible(true);
+							ab3.setVisible(true);
+							FakeHp.setVisible(true);
+							ab4.setVisible(true);
+							
+							int pw = powerup.getValue();
+							if (pw == 1) 
+							{
+								Char.setIcon(PowerChar);
+							}	
+						}
+					};
+					//timer for enemy attack disappear		
+					timer.schedule(task, 900);
+				}
+				else
+				{
 				BBeffect.setIcon(BlueBullet);
 				
 				FakeHp.setVisible(false);
@@ -657,6 +856,7 @@ public class CS10FinalProject
 				//timer for enemy attack disappear		
 				timer.schedule(task, 900);
 			}
+				}
 			else
 			{
 				int mn = mana.getValue();
@@ -691,7 +891,7 @@ public class CS10FinalProject
 				if (mna >= 60)
 				{	
 				int man = mana.getValue();
-				man = man - 70;
+				man = man - 60;
 				
 				mana.setValue(man);
 				FakeHp.setVisible(false);
@@ -733,28 +933,51 @@ public class CS10FinalProject
 						hp1 = hp1 - dmg2;
 						//End of Enemy Attack
 						
-						//Enemy power up
-						if(hp1 < 50) 
-						{
-							Enemy.setIcon(null);
-							Timer timer = new Timer();					
-							TimerTask task = new TimerTask() 
-							{
-								public void run() 
-								{
-									//Check as to why the Icon doesn't function
-									Enemy.setIcon(Saiyan);
-								}
-							};
-							//timer for enemy attack disappear		
-							timer.schedule(task, 900);	
-						}
-						//end of power up code
-						
 						
 						hpbar.setValue(hp1);
 						BBeffect.setIcon(BlueBullet);
 						
+						if (hp1 <= 0)
+						{
+							ab4.setVisible(false);
+							FakeHp.setVisible(false);
+							hp.setVisible(false);
+							rn.setVisible(false);
+							qt.setVisible(false);
+							fght.setVisible(false);
+							ab1.setVisible(false);
+							ab2.setVisible(false);
+							ab3.setVisible(false);
+							yes.setVisible(false);
+							no.setVisible(false);
+							rtrn.setVisible(false);
+							hpbar.setVisible(false);
+							hpbar1.setVisible(false);
+							powerup.setVisible(false);
+							ab3Quit.setVisible(false);
+							ab3No.setVisible(false);
+							Char.setVisible(false);
+							Enemy.setVisible(false);
+							effect.setVisible(false);
+							BBeffect.setVisible(false);
+							mana.setVisible(false);
+							EnemyPowerUpAbility.setVisible(false);
+							EnemyPower.setVisible(false);
+							
+							bg.setIcon(dead);
+							
+							Timer deathtimer = new Timer();
+							
+							TimerTask death = new TimerTask() 
+							{
+								public void run() 
+								{
+									System.exit(0);
+								}
+							};
+									
+							deathtimer.schedule(death, 900);
+						}
 						Timer timer = new Timer();					
 						TimerTask task = new TimerTask() 
 						{
@@ -819,11 +1042,56 @@ public class CS10FinalProject
 			{	
 				
 				//sets damage range from 30 - 40%
-				int dmg1 = 31 + (int)(Math.random()*10);
+				int dmg1 = 41 + (int)(Math.random()*10);
 				int hp2 = hpbar1.getValue();
 				hp2 = hp2 - dmg1;
 				hpbar1.setValue(hp2);
 				FullSlashIcon.setIcon(FullSlash);
+				
+				if (hp2 <=0)
+				{
+					ab4.setVisible(false);
+					FakeHp.setVisible(false);
+					hp.setVisible(false);
+					rn.setVisible(false);
+					qt.setVisible(false);
+					fght.setVisible(false);
+					ab1.setVisible(false);
+					ab2.setVisible(false);
+					ab3.setVisible(false);
+					yes.setVisible(false);
+					no.setVisible(false);
+					rtrn.setVisible(false);
+					hpbar.setVisible(false);
+					hpbar1.setVisible(false);
+					powerup.setVisible(false);
+					ab3Quit.setVisible(false);
+					ab3No.setVisible(false);
+					Char.setVisible(false);
+					Enemy.setVisible(false);
+					effect.setVisible(false);
+					BBeffect.setVisible(false);
+					mana.setVisible(false);
+					EnemyPowerUpAbility.setVisible(false);
+					EnemyPower.setVisible(false);
+					
+					bg.setIcon(win);
+
+					
+					Timer wintimer = new Timer();
+					
+					TimerTask win = new TimerTask() 
+					{
+						public void run() 
+						{
+							System.exit(0);
+						}
+					};
+							
+					wintimer.schedule(win, 1500);
+				}
+				
+				
 				
 				Timer timerWait = new Timer();					
 				TimerTask taskWait = new TimerTask() 
@@ -834,6 +1102,89 @@ public class CS10FinalProject
 						int hp1 = hpbar.getValue();
 						hp1 = hp1 - dmg2;
 						
+						if (hp1 <= 0)
+						{
+							ab4.setVisible(false);
+							FakeHp.setVisible(false);
+							hp.setVisible(false);
+							rn.setVisible(false);
+							qt.setVisible(false);
+							fght.setVisible(false);
+							ab1.setVisible(false);
+							ab2.setVisible(false);
+							ab3.setVisible(false);
+							yes.setVisible(false);
+							no.setVisible(false);
+							rtrn.setVisible(false);
+							hpbar.setVisible(false);
+							hpbar1.setVisible(false);
+							powerup.setVisible(false);
+							ab3Quit.setVisible(false);
+							ab3No.setVisible(false);
+							Char.setVisible(false);
+							Enemy.setVisible(false);
+							effect.setVisible(false);
+							BBeffect.setVisible(false);
+							mana.setVisible(false);
+							EnemyPowerUpAbility.setVisible(false);
+							EnemyPower.setVisible(false);
+							
+							bg.setIcon(dead);
+							
+							Timer deathtimer = new Timer();
+							
+							TimerTask death = new TimerTask() 
+							{
+								public void run() 
+								{
+									System.exit(0);
+								}
+							};
+									
+							deathtimer.schedule(death, 900);
+						}
+						
+						if (hp1 <= 0)
+						{
+							ab4.setVisible(false);
+							FakeHp.setVisible(false);
+							hp.setVisible(false);
+							rn.setVisible(false);
+							qt.setVisible(false);
+							fght.setVisible(false);
+							ab1.setVisible(false);
+							ab2.setVisible(false);
+							ab3.setVisible(false);
+							yes.setVisible(false);
+							no.setVisible(false);
+							rtrn.setVisible(false);
+							hpbar.setVisible(false);
+							hpbar1.setVisible(false);
+							powerup.setVisible(false);
+							ab3Quit.setVisible(false);
+							ab3No.setVisible(false);
+							Char.setVisible(false);
+							Enemy.setVisible(false);
+							effect.setVisible(false);
+							BBeffect.setVisible(false);
+							mana.setVisible(false);
+							EnemyPowerUpAbility.setVisible(false);
+							EnemyPower.setVisible(false);
+							
+							bg.setIcon(dead);
+							
+							Timer deathtimer = new Timer();
+							
+							TimerTask death = new TimerTask() 
+							{
+								public void run() 
+								{
+									System.exit(0);
+								}
+							};
+									
+							deathtimer.schedule(death, 900);
+						}
 						
 						//Characters power up
 						if(hp1 <= 50) 
@@ -854,7 +1205,7 @@ public class CS10FinalProject
 						//end of power up code
 						
 						hpbar.setValue(hp1);
-						BBeffect.setIcon(BlueBullet);
+						
 						
 						Timer timer = new Timer();					
 						TimerTask task = new TimerTask() 
@@ -898,15 +1249,62 @@ public class CS10FinalProject
 				{
 					public void run() 
 					{
-						effect.setIcon(null);
-						
+						FullSlashIcon.setIcon(null);
 					}
 				};
 				//timer for sprite attack disappear			
-				timer.schedule(task, 900);						
+				timer.schedule(task, 400);						
 				
 				
-				
+				int hps = hpbar1.getValue();
+				if (hps <= 50)
+				{
+					saiyan.setValue(1);
+				}
+				int say = saiyan.getValue();
+				if (say == 1)
+				{		
+					Enemy.setIcon(null);
+					Timer timer1 = new Timer();					
+					TimerTask task1 = new TimerTask() 
+					{
+						public void run() 
+						{
+							//Check as to why the Icon doesn't function
+							EnemyPower.setIcon(Saiyan);
+							EnemyPowerUpAbility.setIcon(null);
+							int dmg2 = 26 + (int)(Math.random()*10);
+							int hp1 = hpbar.getValue();
+							hp1 = hp1 - dmg2;
+						}
+						
+					};
+					timer1.schedule(task1, 900);
+					
+					Timer timer2 = new Timer();					
+					TimerTask task2 = new TimerTask() 
+					{
+						public void run() 
+						{
+							EnemyPowerUpAbility.setIcon(BlueStream);
+						}
+					};
+					timer2.schedule(task2, 1000);
+					
+					Timer timer3 = new Timer();					
+					TimerTask task3 = new TimerTask() 
+					{
+						public void run() 
+						{
+							EnemyPowerUpAbility.setIcon(null);
+						}
+					};
+					timer3.schedule(task3, 2000);
+				}
+				else 
+				{
+				BBeffect.setIcon(BlueBullet);
+				}
 			}
 		});
 		
@@ -932,7 +1330,7 @@ public class CS10FinalProject
 				//make healing gui image bigger
 				HealingEffect.setIcon(Healing);
 				int hp1 = hpbar.getValue();
-				hp1 = hp1 + 15;
+				hp1 = hp1 + 40;
 				hpbar.setValue(hp1);
 				frame.remove(hp);
 				
