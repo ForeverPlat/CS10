@@ -1515,7 +1515,6 @@ public class CS10FinalProject
 				}	
 			}
 			});
-
 		
 	}
 }
